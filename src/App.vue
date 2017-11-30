@@ -16,14 +16,16 @@
       }, timeout)
     })
   }
-  window.showhide = function (id, clazz, timeout = 300) {
+  window.showhide = function (id, clazz, timeout = 300, wait = 0) {
     return new Promise(function(resolve, reject) {
       document.getElementById(id).classList.add('animated-200')
       document.getElementById(id).classList.add(clazz)
       setTimeout(() => {
         document.getElementById(id).classList.remove('animated-200')
         document.getElementById(id).classList.remove(clazz)
-        resolve()
+        setTimeout(() => {
+          resolve()
+        }, wait)
       }, timeout)
     })
   }
@@ -34,14 +36,58 @@
       }, timeout)
     })
   }
-  window.twinkling = function (id) {
+  window.rotate = function (id, defaultdeg = 0, defualtMaxHeight = 15) {
+    return new Promise(function(resolve, reject) {
+      var deg = defaultdeg
+      document.getElementById(id).classList.add('animated')
+      var t = setInterval(() => {
+        document.getElementById(id).style.width = 2 + deg * defualtMaxHeight / 360 + 'rem'
+        document.getElementById(id).style.height = 2 + deg * defualtMaxHeight / 360 + 'rem'
+        document.getElementById(id).style.transform = 'translate(-50%,-50%) rotate(' + deg + 'deg) rotateY(0deg)'
+        deg++
+      }, 1)
+      setTimeout(() => {
+        clearInterval(t)
+        resolve()
+      }, 1442)
+    })
+  }
+  window.twinkling = function (id, times = 1000) {
     return new Promise(function(resolve, reject) {
       document.getElementById(id).classList.add('twinkling')
       setTimeout(() => {
-        document.getElementById(id).classList.remove('animate')
+        document.getElementById(id).classList.remove('twinkling')
         resolve()
-      }, 5000)
+      }, times)
     })
+  }
+  window.danmu = function (text, times = 100) {
+    for (var i = 0; i < times; i++) {
+      var top = 0 + i * 30 * Math.random() % 500
+      var right = '-20%'
+      var id = 'danmu_' + i
+      var node = document.createElement('div')
+      node.id = id
+      if (i % 3 === 0) {
+        node.classList.add('danmu-1')
+      } else if (i % 3 === 1) {
+        node.classList.add('danmu-2')
+      } else if (i % 3 === 2) {
+        node.classList.add('danmu-3')
+      }
+
+      node.style.top = top + 'px'
+      node.style.right = right
+      node.innerText = text
+      document.body.appendChild(node);
+      (function (_id, index) {
+        setTimeout(() => {
+          var el = document.getElementById(_id)
+          el.style.right = el.style.right.replace('%', '') - 0 + 400 + '%'
+        }, index * 100 % 5000)
+      })(id, i)
+
+    }
   }
 export default {
   name: 'app',
@@ -169,5 +215,32 @@ export default {
     100%{
       opacity: 1;
     }
+  }
+  .center{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+  }
+  .danmu-2{
+    color:#42b983;
+    right: 0;
+    position: fixed;
+    font-size: 14px;
+    transition: all 10s;
+  }
+  .danmu-1{
+    color:#42b983;
+    right: 0;
+    position: fixed;
+    font-size: 14px;
+    transition: all 10s;
+  }
+  .danmu-3{
+    color:#ff794e;
+    right: 0;
+    position: fixed;
+    font-size: 14px;
+    transition: all 10s;
   }
 </style>
