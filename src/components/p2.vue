@@ -2,7 +2,7 @@
   <div class="page">
     <div id="a">
       <span id="b" class="center" style="margin-left: -3rem;">接下来</span>
-      <span id="c" class="center" style="margin-left: 3rem;">100秒</span>
+      <span id="c" class="center" style="margin-left: 3rem;">60秒</span>
       <span id="d" class="center">重磅消息</span>
       <span id="e" class="center"></span>
     </div>

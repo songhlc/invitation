@@ -1,10 +1,14 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+import p0 from '@/components/p0'
 import p1 from '@/components/p1'
 import p2 from '@/components/p2'
 import p3 from '@/components/p3'
 import p4 from '@/components/p4'
-
+import p5 from '@/components/p5'
+import p6 from '@/components/p6'
+import p7 from '@/components/p7'
+import p8 from '@/components/p8'
 
 Vue.use(Router)
 
@@ -12,6 +16,10 @@ export default new Router({
   routes: [
     {
       path: '/',
+      name: 'p0',
+      component: p0
+    }, {
+      path: '/p1',
       name: 'p1',
       component: p1
     },{
@@ -26,6 +34,22 @@ export default new Router({
       path: '/p4',
       name: 'p4',
       component: p4
+    },{
+      path: '/p5',
+      name: 'p5',
+      component: p5
+    },{
+      path: '/p6',
+      name: 'p6',
+      component: p6
+    },{
+      path: '/p7',
+      name: 'p7',
+      component: p7
+    },{
+      path: '/p8',
+      name: 'p8',
+      component: p8
     }
   ]
 })

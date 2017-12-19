@@ -1,15 +1,16 @@
 <template>
   <div id="app">
     <router-view/>
+    <audio id="audio" :src="src" autoplay="true" ref="audio"></audio>
   </div>
 </template>
 
 <script>
-  window.animate = function (id, clazz, removeClazz, timeout = 300) {
-    document.getElementById(id).classList.remove('animated')
+  window.animate = function (id, clazz, removeClazz, timeout = 300, animated = 'animated') {
+    document.getElementById(id).classList.remove(animated)
     document.getElementById(id).classList.remove(removeClazz)
     return new Promise(function(resolve, reject) {
-      document.getElementById(id).classList.add('animated')
+      document.getElementById(id).classList.add(animated)
       document.getElementById(id).classList.add(clazz)
       setTimeout(() => {
         resolve()
@@ -84,15 +85,21 @@
         setTimeout(() => {
           var el = document.getElementById(_id)
           el.style.right = el.style.right.replace('%', '') - 0 + 400 + '%'
-        }, index * 100 % 5000)
+        }, index * 100 % 2000)
       })(id, i)
 
     }
   }
 export default {
   name: 'app',
+  data () {
+    return {
+      src: './static/bgmusic.mov',
+      percent: '0',
+      interval: ''
+    }
+  },
   mounted () {
-
   }
 }
 </script>
@@ -114,6 +121,10 @@ export default {
   }
   .animated{
     animation-duration: 1s;
+    opacity: 1 !important;
+  }
+  .animated1500{
+    animation-duration: 1.5s;
     opacity: 1 !important;
   }
   .animated-200{
@@ -242,5 +253,27 @@ export default {
     position: fixed;
     font-size: 14px;
     transition: all 10s;
+  }
+  .twinkbg{
+    -webkit-animation: twinkling .15s infinite ease-in-out
+  }
+  @-webkit-keyframes twinkbg{
+    0%{
+      background-color: #000 !important;
+    }
+    100%{
+      background-color: #e8ebed !important;
+    }
+  }
+  @keyframes twinkbg{
+    0%{
+      background-color: #000 !important;
+    }
+    100%{
+      background-color: #e8ebed !important;
+    }
+  }
+  .bgwhite{
+    background-color: #e8ebed !important;
   }
 </style>

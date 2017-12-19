@@ -64,7 +64,9 @@
                         setTimeout(() => {
                           document.getElementById('app').classList.remove('twinkbg')
                           window.animate('a', 'fadeOut', 'animated')
-                          window.animate('g', 'fadeOut', 'animated')
+                          window.animate('g', 'fadeOut', 'animated').then(() => {
+                            window.location.href = "#/p5"
+                          })
                         }, 450)
                       })
                     })
@@ -122,26 +124,5 @@
   }
 </style>
 <style>
-  .twinkbg{
-    -webkit-animation: twinkling .15s infinite ease-in-out
-  }
-  @-webkit-keyframes twinkbg{
-    0%{
-      background-color: #000 !important;
-    }
-    100%{
-      background-color: #e8ebed !important;
-    }
-  }
-  @keyframes twinkbg{
-    0%{
-      background-color: #000 !important;
-    }
-    100%{
-      background-color: #e8ebed !important;
-    }
-  }
-  .bgwhite{
-    background-color: #e8ebed !important;
-  }
+
 </style>

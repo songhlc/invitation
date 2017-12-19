@@ -46,26 +46,27 @@
         window.animate('h', 'fadeOut', 'animated')
         window.animate('i', 'fadeOut', 'animated')
         window.animate('j', 'fadeOut', 'animated').then(() => {
-          window.showhide('k', 'fadeIn', 500).then(() => {
-            window.showhide('l', 'fadeIn', 500).then(() => {
-              window.showhide('m', 'fadeIn', 500).then(() => {
-                window.showhide('n', 'fadeIn', 500).then(() => {
-                  window.showhide('o', 'fadeIn', 500).then(() => {
-                    window.showhide('p', 'fadeIn', 500).then(() => {
-                      window.showhide('q', 'fadeIn', 500).then(() => {
-                        window.showhide('r', 'fadeIn', 500).then(() => {
-                          window.showhide('s', 'fadeIn', 500).then(() => {
-                            window.showhide('t', 'fadeIn', 500).then(() => {
-                              window.showhide('s', 'fadeIn', 500).then(() => {
-                                window.showhide('t', 'fadeIn', 500).then(() => {
+          window.showhide('k', 'fadeIn', 450).then(() => {
+            window.showhide('l', 'fadeIn', 450).then(() => {
+              window.showhide('m', 'fadeIn', 450).then(() => {
+                window.showhide('n', 'fadeIn', 450).then(() => {
+                  window.showhide('o', 'fadeIn', 450).then(() => {
+                    window.showhide('p', 'fadeIn', 450).then(() => {
+                      window.showhide('q', 'fadeIn', 450).then(() => {
+                        window.showhide('r', 'fadeIn', 450).then(() => {
+                          window.showhide('s', 'fadeIn', 450).then(() => {
+                            window.showhide('t', 'fadeIn', 450).then(() => {
+                              window.showhide('s', 'fadeIn', 450).then(() => {
+                                window.showhide('t', 'fadeIn', 450).then(() => {
                                   window.danmu('要结婚啦', 180)
                                     window.twinkling('u').then(() => {
                                       window.twinkling('u').then(() => {
                                         window.twinkling('u').then(() => {
+                                          window.location.href = "#/p4"
                                           window.twinkling('u').then(() => {
                                             window.twinkling('u').then(() => {
                                               window.twinkling('u').then(() => {
-                                                window.location.href = "#/p4"
+
                                               })
                                             })
                                           })
