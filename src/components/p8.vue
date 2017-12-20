@@ -26,9 +26,11 @@
           setTimeout(function () {
             document.getElementById('app').classList.remove('twinkbg')
             that.shortText = '<div></div>'
-            that.replay = '点击观看'
-            that.isShow = true
-          }.bind(this), 7000)
+            setTimeout(function () {
+              that.replay = '重新观看'
+              that.isShow = true
+            }, 3000)
+          }.bind(this), 5000)
         })
       }, 12500)
     },

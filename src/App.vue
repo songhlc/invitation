@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <router-view/>
-    <audio id="audio" :src="src" ref="audio"></audio>
+    <audio id="audio" :src="src" ref="audio" preload="auto"></audio>
   </div>
 </template>
 
@@ -99,7 +99,7 @@ export default {
   name: 'app',
   data () {
     return {
-      src: './static/bgmusic2.m4a',
+      src: './static/bgmusic4.m4a',
       percent: '0',
       interval: ''
     }
