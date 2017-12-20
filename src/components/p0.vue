@@ -18,6 +18,9 @@
         console.log(audio.readyState)
         audio.readyState == 4 && (this.percent = Math.round(audio.buffered.end(0) / audio.duration * 100))
       }
+      document.addEventListener("WeixinJSBridgeReady", function () {
+        audio.play()
+      }, false)
     },
     watch: {
       percent (val) {
