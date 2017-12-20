@@ -42,7 +42,7 @@
         }.bind(this), 180)
       },
       review () {
-        window.location.href = '/'
+        window.location.hash = '#/'
       }
     }
   }
