@@ -4,7 +4,7 @@
       <span id="b" class="center" style="margin-left: -3rem;">接下来</span>
       <span id="c" class="center" style="margin-left: 3rem;">60秒</span>
       <span id="d" class="center">重磅消息</span>
-      <span id="e" class="center"></span>
+      <span id="e" class="center2"></span>
     </div>
   </div>
 </template>
@@ -46,7 +46,11 @@
     height: 2rem;
     display: block;
     border:solid 1px #ff794e;
-    transform-origin: 50% 50% 0px;
-    transform: translate(-50%,-50%) rotate(360deg) rotateY(0deg);
+    margin-left:-1rem;
+    margin-top:-1rem;
+    transition: All 1.44s ease-in-out;
+    -webkit-transition: All 1.44s ease-in-out;
+    -moz-transition: All 1.44s ease-in-out;
+    -o-transition: All 1.44s ease-in-out;
   }
 </style>

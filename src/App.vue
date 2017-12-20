@@ -37,20 +37,25 @@
       }, timeout)
     })
   }
-  window.rotate = function (id, defaultdeg = 0, defualtMaxHeight = 15) {
+  window.rotate = function (id, defaultdeg = 0, defualtMaxHeight = 15, timeout = 1442) {
     return new Promise(function(resolve, reject) {
       var deg = defaultdeg
       document.getElementById(id).classList.add('animated')
-      var t = setInterval(() => {
-        document.getElementById(id).style.width = 2 + deg * defualtMaxHeight / 360 + 'rem'
-        document.getElementById(id).style.height = 2 + deg * defualtMaxHeight / 360 + 'rem'
-        document.getElementById(id).style.transform = 'translate(-50%,-50%) rotate(' + deg + 'deg) rotateY(0deg)'
-        deg++
-      }, 1)
+      document.getElementById(id).classList.add('rotateStyle' + defaultdeg)
+
+//      var t = setInterval(() => {
+      document.getElementById(id).style.marginLeft = '-8rem'
+      document.getElementById(id).style.marginTop = '-8rem'
+      document.getElementById(id).style.width = '16rem'
+      document.getElementById(id).style.height = '16rem'
+//        var rate = (2 + deg * defualtMaxHeight / 360) / 2
+//      document.getElementById(id).style.transform = 'translate(-50%,-50%) rotate(360deg)'
+//        deg++
+//      }, 100)
       setTimeout(() => {
         clearInterval(t)
         resolve()
-      }, 1442)
+      }, timeout)
     })
   }
   window.twinkling = function (id, times = 1000) {
@@ -62,7 +67,7 @@
       }, times)
     })
   }
-  window.danmu = function (text, times = 100) {
+  window.danmu = function (text, times = 70) {
     for (var i = 0; i < times; i++) {
       var top = 0 + i * 30 * Math.random() % 500
       var right = '-20%'
@@ -243,6 +248,11 @@ export default {
     top: 50%;
     transform: translate(-50%,-50%);
   }
+  .center2{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+  }
   .danmu-2{
     color:#42b983;
     right: 0;
@@ -285,5 +295,12 @@ export default {
   }
   .bgwhite{
     background-color: #e8ebed !important;
+  }
+  .rotateStyle0 {
+    transform: rotate(360deg) !important;
+    -webkit-transform:rotate(360deg) !important;;
+    -moz-transform: rotate(360deg) !important;;
+    -o-transform: rotate(360deg) !important;;
+    -ms-transform: rotate(360deg) !important;;
   }
 </style>
