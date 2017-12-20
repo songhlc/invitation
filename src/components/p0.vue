@@ -12,14 +12,16 @@
     },
     mounted () {
       var audio = document.getElementById('audio')
+      audio.play()
       // 已缓冲百分百
       audio.ontimeupdate = () => {
+        console.log(audio.readyState)
         audio.readyState == 4 && (this.percent = Math.round(audio.buffered.end(0) / audio.duration * 100))
       }
     },
     watch: {
       percent (val) {
-        if (val >= 100) {
+        if (val > 0) {
           setTimeout(function () {
             window.location.href = '#/p1'
           })

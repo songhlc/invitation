@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <router-view/>
-    <audio id="audio" :src="src" autoplay="true" ref="audio"></audio>
+    <audio id="audio" :src="src" ref="audio"></audio>
   </div>
 </template>
 
@@ -94,12 +94,22 @@ export default {
   name: 'app',
   data () {
     return {
-      src: './static/bgmusic.mov',
+      src: './static/bgmusic2.m4a',
       percent: '0',
       interval: ''
     }
   },
   mounted () {
+      this.audioAutoPlay()
+  },
+  methods: {
+    audioAutoPlay () {
+//      var audio = document.getElementById('audio')
+//      audio.play()
+//      document.addEventListener('WeixinJSBridgeReady', function () {
+//        audio.play()
+//      }, false)
+    }
   }
 }
 </script>
