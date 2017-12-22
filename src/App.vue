@@ -68,8 +68,10 @@
     })
   }
   window.danmu = function (text, times = 70) {
+    var el = document.getElementById('danmu')
+    el.innerText = ''
     for (var i = 0; i < times; i++) {
-      var top = 0 + i * 30 * Math.random() % 500
+      var top = 0 + i * 30 * Math.random() % 700
       var right = '-20%'
       var id = 'danmu_' + i
       var node = document.createElement('div')
@@ -85,7 +87,7 @@
       node.style.top = top + 'px'
       node.style.right = right
       node.innerText = text
-      document.body.appendChild(node);
+      el.appendChild(node);
       (function (_id, index) {
         setTimeout(() => {
           var el = document.getElementById(_id)

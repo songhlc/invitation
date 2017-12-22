@@ -10,7 +10,7 @@
   export default {
     data () {
       return {
-        fullText: '2018年1月13日 晚上六点整！<br>宁德闽东宾馆   不见不散！<br>不见红包绝对不散！<br>   欢迎您的光临! ',
+        fullText: '2018年1月13日 晚上6点！<br>宁德闽东宾馆   不见不散！<br>不见红包绝对不散！<br>   欢迎您的光临! ',
         shortText: '',
         replay: '',
         isShow: false
@@ -30,7 +30,7 @@
               that.replay = '重新观看'
               that.isShow = true
             }, 3000)
-          }.bind(this), 5000)
+          }.bind(this), 3500)
         })
       }, 12500)
     },

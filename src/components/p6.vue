@@ -89,7 +89,7 @@
 <style scoped>
   div span {
     opacity: 0;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
   }
   .inbottom{
     position: absolute;
@@ -97,6 +97,9 @@
     bottom:0;
     left: 0;
     right: 0;
+  }
+  #text {
+
   }
   #big{
     font-size: 5rem;

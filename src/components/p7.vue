@@ -21,7 +21,7 @@
     <span id="d3">馆</span>
     <span id="d4">馆</span>
     <span id="d5">馆</span>
-    <span id="e1" class="center">闽东宾馆</span>
+    <span id="e1" class="center">宁德闽东宾馆</span>
     <span id="e2" class="center">三层宴会厅</span>
   </div>
 </template>
